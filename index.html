@@ -6,34 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProseMirror Playground</title>
     <link rel="stylesheet" href="https://prosemirror.net/css/editor.css" />
+    <style>
+span[data-style] {
+  margin-inline: 10px;
+  background-color: bisque;
+}
+    </style>
   </head>
 
   <body>
     <div id="editor" style="margin-bottom: 23px"></div>
 
     <div style="display: none" id="content">
-      <h3>Hello ProseMirror</h3>
+      <h3>Try to delete the first charactor in each line:</h3>
 
-      <p>This is editable text. You can focus it and start typing.</p>
-
-      <p>
-        To apply styling, you can select a piece of text and manipulate its
-        styling from the menu. The basic schema supports <em>emphasis</em>,
-        <strong>strong text</strong>,
-        <a href="http://marijnhaverbeke.nl/blog">links</a>,
-        <code>code font</code>.
-      </p>
-
-      <p>
-        Block-level structure can be manipulated with key bindings (try
-        ctrl-shift-2 to create a level 2 heading, or enter in an empty textblock
-        to exit the parent block), or through the menu.
-      </p>
-
-      <p>
-        Try using the “list” item in the menu to wrap this paragraph in a
-        numbered list.
-      </p>
+      <p>P<span data-style><span style="display: inline;"><img>display: inline</span></span></p>
+      <p>r<span data-style><span style="display: inline-block;"><img>display: inline-block</span></span></p>
+      <p>o<span data-style><span style="display: inline-flex;"><img>display: inline-flex</span></span>❌</p>
+      <p>s<span data-style><span style="display: inline-grid;"><img>display: inline-grid</span></span>❌</p>
+      <p>e<span data-style><span style="display: inline-table;"><img>display: inline-table</span></span></p>
+      <p>m<span data-style><span style="display: block;"><img>display: block</span></span>❌ (only chrome)</p>
+      <p>i<span data-style><span style="display: flex;"><img>display: flex</span></span>❌</p>
+      <p>r<span data-style><span style="display: grid;"><img>display: grid</span></span>❌</p>
+      <p>r<span data-style><span style="display: table;"><img>display: table</span></span>❌ (only chrome)</p>
+      <p>o<span data-style><span style="display: none;"><img>display: none</span></span></p>
+      <p>r<span data-style><span style="display: contents;"><img>display: contents</span></span></p>
     </div>
 
     <script type="module" src="/src/main.ts" defer></script>
