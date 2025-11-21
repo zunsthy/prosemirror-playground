@@ -6,31 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProseMirror Playground</title>
     <link rel="stylesheet" href="https://prosemirror.net/css/editor.css" />
-    <style>
-span[data-style] {
-  margin-inline: 10px;
-  background-color: bisque;
-}
-    </style>
   </head>
 
   <body>
     <div id="editor" style="margin-bottom: 23px"></div>
 
     <div style="display: none" id="content">
-      <h3>Try to delete the first charactor in each line:</h3>
-
-      <p>P<span data-style><span style="display: inline;"><img>display: inline</span></span></p>
-      <p>r<span data-style><span style="display: inline-block;"><img>display: inline-block</span></span></p>
-      <p>o<span data-style><span style="display: inline-flex;"><img>display: inline-flex</span></span>❌</p>
-      <p>s<span data-style><span style="display: inline-grid;"><img>display: inline-grid</span></span>❌</p>
-      <p>e<span data-style><span style="display: inline-table;"><img>display: inline-table</span></span></p>
-      <p>m<span data-style><span style="display: block;"><img>display: block</span></span>❌ (only chrome)</p>
-      <p>i<span data-style><span style="display: flex;"><img>display: flex</span></span>❌</p>
-      <p>r<span data-style><span style="display: grid;"><img>display: grid</span></span>❌</p>
-      <p>r<span data-style><span style="display: table;"><img>display: table</span></span>❌ (only chrome)</p>
-      <p>o<span data-style><span style="display: none;"><img>display: none</span></span></p>
-      <p>r<span data-style><span style="display: contents;"><img>display: contents</span></span></p>
+      <p>Press ➝ and see the cursor size change <span data-big></span></p>
     </div>
 
     <script type="module" src="/src/main.ts" defer></script>

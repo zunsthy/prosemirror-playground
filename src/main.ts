@@ -10,7 +10,8 @@ import { addListNodes } from 'prosemirror-schema-list'
 import { EditorState, type Plugin } from 'prosemirror-state'
 import { EditorView } from 'prosemirror-view'
 
-import { anyblockSpec } from './anyblock'
+import { bigSpec } from './big'
+import { autoAddZeroPlugin } from './zero'
 
 function createSchema() {
   const marks = basicSchema.spec.marks
@@ -20,9 +21,7 @@ function createSchema() {
   // create a schema with list support.
   nodes = addListNodes(nodes, 'paragraph block*', 'block')
 
-  nodes = nodes.append({ 'anyblock': anyblockSpec })
-
-  console.log('nodes', nodes);
+  nodes = nodes.append({ big: bigSpec })
 
   return new Schema({
     nodes,
@@ -36,9 +35,12 @@ function createMenuContent(schema: Schema): MenuElement[][] {
 }
 
 function createPlugins(schema: Schema) {
+  const url = new URL(window.location.href)
+  const needZero = url.searchParams.get('autozero')
   const menuContent = createMenuContent(schema)
   return [
     ...exampleSetup({ schema, menuContent }),
+    needZero ? autoAddZeroPlugin : false
   ].filter((x) => !!x)
 }
 
