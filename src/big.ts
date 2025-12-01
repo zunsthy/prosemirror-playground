@@ -6,15 +6,15 @@ const spec: NodeSpec = {
   inline: true,
   group: 'inline',
   attrs: {},
+  selectable: false,
   toDOM: () => {
     const dom = document.createElement('span')
     dom.innerHTML = `<img src="${b1png}" width="100" height="100">`
     dom.setAttribute('data-big', '');
     return ['span', {
       'data-big': '',
-      style: 'margin-right: 5px'
+      style: 'display: inline-block; margin-inline: 2px;'
     }, ['img', {
-      width: 100,
       height: 100,
       src: b1png
     }]]

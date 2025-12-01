@@ -11,7 +11,7 @@ import { EditorState, type Plugin } from 'prosemirror-state'
 import { EditorView } from 'prosemirror-view'
 
 import { bigSpec } from './big'
-import { autoAddZeroPlugin } from './zero'
+import { autoAddZWSPPlugin } from './zwsp'
 
 function createSchema() {
   const marks = basicSchema.spec.marks
@@ -35,12 +35,10 @@ function createMenuContent(schema: Schema): MenuElement[][] {
 }
 
 function createPlugins(schema: Schema) {
-  const url = new URL(window.location.href)
-  const needZero = url.searchParams.get('autozero')
   const menuContent = createMenuContent(schema)
   return [
     ...exampleSetup({ schema, menuContent }),
-    needZero ? autoAddZeroPlugin : false
+    autoAddZWSPPlugin
   ].filter((x) => !!x)
 }
 
